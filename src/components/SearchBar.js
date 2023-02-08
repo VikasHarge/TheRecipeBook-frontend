@@ -116,7 +116,7 @@ const SearchBar = () => {
 
 const StyledSeachBoard = styled.div`
 
-    margin : 17vh auto;
+    margin : 17vh auto 2rem;
     width : fit-content;
     height : fit-content;
     background-color : #EAEAEA;

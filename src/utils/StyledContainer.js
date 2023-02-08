@@ -3,9 +3,15 @@ import styled from "styled-components";
 export const StyledContainer = styled.div`
     width : 100%;
     height : ${(props)=>props.height || "max-content"};
-    padding : 0.3rem 3rem;
+    padding : 0.3rem 5rem;
     background-color : ${(props)=>props.color || "#ffff"};
     margin : 0 auto;
+    h1 {
+        font-size : 1.5rem;
+        padding-left : 6px;
+        margin-bottom : 12px;
+        border-left : 6px solid gray;
+    }
 `
 
 export const StyledBtn = styled.button`
@@ -25,4 +31,18 @@ export const StyledBtn = styled.button`
         color : ${(props)=>props.backgroundColor || "black"};
         border-color : ${(props)=>props.backgroundColor || "#black"} !important;
     }
+`
+
+export const CartContainer = styled.div`
+    width : 100%;
+    height : fit-content;
+    display: flex;
+    justify-content : space-between;
+    flex-wrap : wrap;
+    gap : 2rem;
+`
+
+export const SpacerContainer = styled.div`
+    width : 100%;
+    height : ${(props)=>props.height || "2rem"};
 `
