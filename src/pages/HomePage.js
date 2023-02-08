@@ -6,7 +6,11 @@ import { fetchRandomRecipes } from "../app/features/recipe/recipeSlice";
 
 import RecipeCart from "../components/RecipeCart";
 import Loader from "../utils/Loader";
-import { StyledContainer, CartContainer, SpacerContainer } from "../utils/StyledContainer";
+import {
+  StyledContainer,
+  CartContainer,
+  SpacerContainer,
+} from "../utils/StyledContainer";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -15,13 +19,17 @@ const HomePage = () => {
     (state) => state.randomRecipesData
   );
 
-const {healthyRecipes} = useSelector((state)=>state.healthyRecipesData)
+  const { healthyRecipes } = useSelector((state) => state.healthyRecipesData);
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchRandomRecipes())
     dispatch(fetchHealthyRecipes())
-    
-  },[])
+  }, [dispatch]);
+
+
+  useEffect(()=>{
+    localStorage.setItem('recipe', JSON.stringify(recipies))
+  },[recipies])
 
 
 
@@ -29,46 +37,38 @@ const {healthyRecipes} = useSelector((state)=>state.healthyRecipesData)
   return (
     <>
       {loading ? (
-        <><Loader/></>
+        <>
+          <Loader />
+        </>
       ) : (
         <>
           <StyledContainer>
             <h1>Trending Recipes</h1>
             <CartContainer>
-
-            {
-                recipies && recipies.map((data, index)=>(
-                    <RecipeCart key={data.id}  data={data} />
-                ))
-            }
-
+              {recipies &&
+                recipies.map((data, index) => (
+                  <RecipeCart key={data.id} data={data} />
+                ))}
             </CartContainer>
           </StyledContainer>
 
-          <SpacerContainer height="4rem" >
+          <SpacerContainer height="4rem"></SpacerContainer>
 
-          </SpacerContainer>
-
-
-          
           <StyledContainer>
-            <h1>vegetarian Recipes</h1>
+            <h1>Healthy Recipes</h1>
             <CartContainer>
-
-            {
-                healthyRecipes && healthyRecipes.map((data, index)=>(
-                    <RecipeCart key={data.id}  data={data} />
-                ))
-            }
-
+              {healthyRecipes &&
+                healthyRecipes.map((data, index) => (
+                  <RecipeCart key={data.id} data={data} />
+                ))}
             </CartContainer>
           </StyledContainer>
+
+          <SpacerContainer height="4rem"></SpacerContainer>
         </>
       )}
     </>
   );
 };
-
-
 
 export default HomePage;

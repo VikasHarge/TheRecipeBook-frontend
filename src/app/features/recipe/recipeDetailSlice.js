@@ -5,43 +5,43 @@ import axios from "axios";
 
 const initialState = {
     loading : false,
-    recipies : [],
+    recipieDetail : null,
     error : null
 }
 
 
 //Fetch Random Recipies (popular)
-export const fetchRandomRecipes = createAsyncThunk('recipies/random', async (max)=>{
+export const fetchRecipeDetail = createAsyncThunk('recipies/Detail', async (recipeId)=>{
     const {data} = await axios.get(
-        `https://api.spoonacular.com/recipes/random?apiKey=e39fdebb135c4638956f099006153078&number=9`,
+        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=e39fdebb135c4638956f099006153078`,
         {
             headers : {
             "Content-Type" : "application/json"
         }
         }
     )
-    return data.recipes
+    return data
 } )
 
-const recipesSlice = createSlice({
-    name : 'recipies',
+const recipesDetailSlice = createSlice({
+    name : 'recipiesDetail',
     initialState,
     extraReducers : (builder)=>{
-        builder.addCase(fetchRandomRecipes.pending, (state)=>{
+        builder.addCase(fetchRecipeDetail.pending, (state)=>{
             state.loading = true;
             state.error = null;
         })
-        builder.addCase(fetchRandomRecipes.fulfilled, (state, action)=>{
+        builder.addCase(fetchRecipeDetail.fulfilled, (state, action)=>{
             state.loading = false;
-            state.recipies = action.payload;
+            state.recipieDetail = action.payload;
             state.error = null;
         })
-        builder.addCase(fetchRandomRecipes.rejected, (state, action)=>{
+        builder.addCase(fetchRecipeDetail.rejected, (state, action)=>{
             state.loading = false;
             state.error = action.error;
         })
     }
 })
 
-export default recipesSlice.reducer;
+export default recipesDetailSlice.reducer;
 

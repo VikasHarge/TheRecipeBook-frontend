@@ -2,11 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import {BiTimeFive} from 'react-icons/bi'
 import { StyledBtn } from '../utils/StyledContainer'
+import { Link, useNavigate } from 'react-router-dom'
 
 const RecipeCart = ({data}) => {
+
+    const navigate = useNavigate()
+
+
+
   return (
     <CratRecipe key={data.id} > 
-        <img src={data.image} />
+    <img src={data.image} />
         <h2 className='cart_title' >{data.title}</h2>
 
         <div className='cart_summary' >
@@ -32,10 +38,13 @@ const RecipeCart = ({data}) => {
             <StyledBtn
                 fontSize="0.8rem"
                 backgroundColor="#00ABB3"
+                onClick={()=>navigate(`/recipe/${data.id}`)}
             >
                 View details
             </StyledBtn>
         </div>
+
+
         
     </CratRecipe>
   )

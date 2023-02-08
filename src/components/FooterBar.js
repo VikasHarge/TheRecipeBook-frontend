@@ -2,17 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledContainer, StyledBtn } from '../utils/StyledContainer'
 import logo  from "../media/logos/rblogo.jpg";
-import { useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
 
-    const navigate = useNavigate()
+const FooterBar = () => {
 
 
   return (
     <>
-    <NavDiv>
-        <div className='logo_div' onClick={()=>navigate('/')} >
+    <FooterDiv>
+        <div className='logo_div' >
             <img src={logo}  />
             <div className='title_div' >
                 <h1>The Recipe Book</h1>
@@ -20,27 +18,22 @@ const NavBar = () => {
             </div>
         </div>
         <div className='btn_container' >
-            <StyledBtn>
-                login
-            </StyledBtn>
-            <StyledBtn>
-                Signup
-            </StyledBtn>
+            <h2>Design and Developed By : <a href='https://www.linkedin.com/in/vikas-harge/' target='blank' >Vikas Harge</a></h2>
         </div>
-    </NavDiv>
+    </FooterDiv>
     </>
   )
 }
 
-const NavDiv = styled.div`
+const FooterDiv = styled.div`
     -webkit-box-shadow: -1px 4px 10px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 4px 10px -8px rgba(0,0,0,0.75);
     box-shadow: -1px 4px 10px -8px rgba(0,0,0,0.75);
 
-    position : fixed;
-    z-index : 999;
+
     width : 100%;
-    height : 15vh;
+    font-size : 0.5rem;
+    height : 10vh;
     padding : 0.5rem 2rem;
     background-color : #B2B2B2;
     display : flex;
@@ -50,20 +43,19 @@ const NavDiv = styled.div`
         display : flex;
         align-items : center;
         gap : 1rem;
-        cursor : pointer;
     }
     img {
-        width : 5rem;
+        width : 2rem;
         border-radius : 5rem;
     };
     .title_div{
         display : flex;
         flex-direction : column;
         p {
-            font-size : 0.7rem;
+            font-size : 0.5rem;
         }
     }
 
 `
 
-export default NavBar
+export default FooterBar

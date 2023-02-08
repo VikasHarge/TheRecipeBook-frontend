@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import { StyledBtn, StyledContainer } from '../utils/StyledContainer'
 
@@ -7,14 +8,37 @@ const SearchBar = () => {
     const [searchBy, setSearchBy] = useState('');
     const [searchKey, setSearchKey] = useState('');
 
+    const navigate = useNavigate()
+    
+
     const radioChangeHandle = (e)=>{
         setSearchBy(e.target.value);
     }
 
-    useEffect(()=>{
-        console.log(searchBy)
-        console.log(searchKey)
-    },[searchBy, searchKey])
+
+
+    const handleSearch = ()=>{
+        console.log(searchBy);
+        if(!searchBy){
+            return
+        }
+        if(searchKey === ''){
+            return
+        }
+    
+        if(searchBy === 'Name' ){
+
+            navigate(`/names/${searchKey}`)
+        }
+        if(searchBy === 'Cuisine'){
+            navigate(`/cusines/${searchKey}`)
+        }
+        if(searchBy === 'Ingredient'){
+            console.log(searchKey);
+            navigate(`/ingridients/${searchKey}`)
+        }
+        setSearchKey('')
+    }
 
   return (
     <StyledContainer>
@@ -105,7 +129,9 @@ const SearchBar = () => {
             </StyledInput>
 
 
-            <StyledBtn>
+            <StyledBtn 
+                onClick={handleSearch}
+             >
                 Seach
             </StyledBtn>
 
