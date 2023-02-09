@@ -55,7 +55,7 @@ const DetailCart = ({recipieDetail}) => {
                 
                 <div className="instructions_div">
                 <h1>Instruction's</h1>
-                <p className="instruction_wrapper" dangerouslySetInnerHTML={{__html : recipieDetail.instructions}} ></p>
+                <div className="instruction_wrapper" dangerouslySetInnerHTML={{__html : recipieDetail.instructions}} ></div>
                 </div>
               </DetailContainer>
   )

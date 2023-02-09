@@ -46,3 +46,18 @@ export const SpacerContainer = styled.div`
     width : 100%;
     height : ${(props)=>props.height || "2rem"};
 `
+
+export const ErrorMsgContainer = styled.div`
+    width : 100%;
+    height : 30vh;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    h1{
+        font-size : 1rem;
+        padding : 0.5rem 1rem;
+        border : 1px solid red;
+        color : red;
+        border-radius : 6px;
+    }
+`

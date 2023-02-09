@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components'
 import { StyledBtn, StyledContainer } from '../utils/StyledContainer'
 
 const SearchBar = () => {
 
-    const [searchBy, setSearchBy] = useState('');
+    const [searchBy, setSearchBy] = useState(null);
     const [searchKey, setSearchKey] = useState('');
 
     const navigate = useNavigate()
@@ -15,19 +17,19 @@ const SearchBar = () => {
         setSearchBy(e.target.value);
     }
 
-
-
     const handleSearch = ()=>{
         console.log(searchBy);
+
         if(!searchBy){
-            return
+            toast.warning("Please Select Search Type")
+            return 
         }
         if(searchKey === ''){
+            toast.warning("Please Enter Search Value")
             return
         }
     
         if(searchBy === 'Name' ){
-
             navigate(`/names/${searchKey}`)
         }
         if(searchBy === 'Cuisine'){
@@ -42,6 +44,7 @@ const SearchBar = () => {
 
   return (
     <StyledContainer>
+        <ToastContainer/>
         <StyledSeachBoard>
             <SeachBydiv>
                 <StyledInput
