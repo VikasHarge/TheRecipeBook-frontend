@@ -1,0 +1,113 @@
+.loginSignupBox{
+    height: max-content;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.login-signup-toggle{
+    display: flex;
+    height: 1rem;
+}
+.login-signup-toggle >p {
+    color: gray;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.login-signup-toggle >p:hover{
+    color: black;
+}
+
+.loginSignupBox > div > button {
+    background-color: black;
+    height: 2px;
+    width: 50%;
+    border: none;
+    transition: all 0.2s;
+}
+
+.loginform,
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+    height: 40vh;
+    transition: all 0.8s;
+}
+
+.loginform{
+    padding-top: 4rem;
+}
+
+.signUpForm{
+    transform: translateY(-100%) translateX(100vmax);
+    /* display: none; */
+}
+
+
+.shiftToLeft{
+    transform: translateX(-100%);
+}
+.shiftToNeutral{
+    transform: translateX(0%);
+}
+.shiftToNeutralForm{
+    transform: translateX(0%) translateY(-100%);
+}
+.shiftToRight{
+    transform: translateX(100%);
+}
+
+
+.loginLableContainer,
+.signupLableContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    padding: 0 0 6px 0;
+    transition: all 0.2s;
+
+}
+
+.StyledLoginSignupContainer{
+    background-image: url("../../media/banner/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position-x: -10rem;
+    transition: all 0.2s;
+
+}
+
+
+.tabColor{
+    color: black !important;
+}
+
+
+
+.registerBtn{
+    border: 1px solid transparent;
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: black;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.registerBtn:hover{
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}

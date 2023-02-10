@@ -3,8 +3,14 @@ import styled from "styled-components";
 import { BiTimeFive } from "react-icons/bi";
 import { IoIosPeople } from "react-icons/io";
 import {MdOutlineHealthAndSafety} from 'react-icons/md'
+import { StyledBtn } from '../utils/StyledContainer';
+import { useDispatch } from 'react-redux';
+import { loadUser, saveRecipe } from '../app/features/user/userSlice';
 
 const DetailCart = ({recipieDetail}) => {
+
+  const dispatch = useDispatch()
+
   return (
     <DetailContainer>
                 <div className="image_div">
@@ -36,6 +42,12 @@ const DetailCart = ({recipieDetail}) => {
                       <MdOutlineHealthAndSafety />
                       <h2>{recipieDetail.healthScore} Health Score</h2>
                     </div>
+                  </div>
+                  <div>
+                  <StyledBtn onClick={()=>{
+                    dispatch(saveRecipe({recipeName:recipieDetail.title, recipeImage : recipieDetail.image, recipeId : recipieDetail.id }))
+                    dispatch(loadUser())
+                  }} >Save Recipe</StyledBtn>
                   </div>
                 </div>
 

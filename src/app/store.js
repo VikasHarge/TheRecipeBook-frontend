@@ -3,7 +3,7 @@ import recipeReducer from "./features/recipe/recipeSlice";
 import healthyRecipeReducer from './features/recipe/healthyRecipeSlice'
 import recipesDetailReducer from './features/recipe/recipeDetailSlice'
 import recipeSearchReducer from './features/recipe/recipeSearchSlice'
-
+import userReducer from './features/user/userSlice'
 
 
 
@@ -13,7 +13,8 @@ const reducer = combineReducers({
     randomRecipesData : recipeReducer,
     healthyRecipesData : healthyRecipeReducer,
     recipesDetailsData : recipesDetailReducer,
-    searchedRecipesData : recipeSearchReducer
+    searchedRecipesData : recipeSearchReducer,
+    user : userReducer,
 })
 
 
