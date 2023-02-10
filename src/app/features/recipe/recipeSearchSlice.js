@@ -13,7 +13,7 @@ const initialState = {
 //Fetch recipes by cuisine
 export const fetchRecipesByCuisine = createAsyncThunk('recipies/cuisine', async (cuisineType)=>{
     const {data} = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=e39fdebb135c4638956f099006153078&number=9&cuisine=${cuisineType}`,
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=7f634ede2bf84a7680982e39aba642c2&number=9&cuisine=${cuisineType}`,
         {
             headers : {
             "Content-Type" : "application/json"
@@ -27,7 +27,7 @@ export const fetchRecipesByCuisine = createAsyncThunk('recipies/cuisine', async 
 //Fetch recipes by Name
 export const fetchRecipesByName = createAsyncThunk('recipies/name', async (name)=>{
     const {data} = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=e39fdebb135c4638956f099006153078&number=9&query=${name}`,
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=7f634ede2bf84a7680982e39aba642c2&number=9&query=${name}`,
         {
             headers : {
             "Content-Type" : "application/json"
@@ -42,7 +42,7 @@ export const fetchRecipesByName = createAsyncThunk('recipies/name', async (name)
 //Fetch recipes by Ingridient
 export const fetchRecipesByIngredients = createAsyncThunk('recipies/ingredients', async (ingridients)=>{
     const {data} = await axios.get(
-        `https://api.spoonacular.com/recipes/findByIngredients?apiKey=e39fdebb135c4638956f099006153078&number=9&ingredients=${ingridients}`,
+        `https://api.spoonacular.com/recipes/findByIngredients?apiKey=7f634ede2bf84a7680982e39aba642c2&number=9&ingredients=${ingridients}`,
         {
             headers : {
             "Content-Type" : "application/json"

@@ -13,7 +13,7 @@ const initialState = {
 //Fetch Random Recipies (popular)
 export const fetchHealthyRecipes = createAsyncThunk('recipies/healthyRecipes', async ()=>{
     const {data} = await axios.get(
-        `https://api.spoonacular.com/recipes/random?apiKey=e39fdebb135c4638956f099006153078&number=9&diet=vegetarian`,
+        `https://api.spoonacular.com/recipes/random?apiKey=7f634ede2bf84a7680982e39aba642c2&number=9&diet=vegetarian`,
         {
             headers : {
             "Content-Type" : "application/json"
