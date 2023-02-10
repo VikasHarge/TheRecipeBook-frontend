@@ -27,12 +27,11 @@ const RecipeDetail = () => {
         <Loader />
       ) : (
         <>
-          <StyledContainer>
+          <StyledContainer  >
             {recipieDetail && (
                 <DetailCart recipieDetail={recipieDetail}/>
             )}
           </StyledContainer>
-
           <SpacerContainer height="3rem"></SpacerContainer>
         </>
       )}

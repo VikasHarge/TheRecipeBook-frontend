@@ -81,7 +81,7 @@ const DetailContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   div {
-    height: 100%;
+    height: fit-content;
     padding: 0.6rem;
     h1 {
       font-size: 1.2rem;
