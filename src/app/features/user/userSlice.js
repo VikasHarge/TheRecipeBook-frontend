@@ -137,12 +137,14 @@ const userSlice = createSlice({
     builder.addCase(logout.pending, (state, action) => {
       state.loading = true;
       state.error = "";
+      toast.warn("Logging Out")
     });
     builder.addCase(logout.fulfilled, (state, action) => {
       state.isAuthenticated = false;
       state.error = "";
       state.loading = false;
       state.userData = null;
+      toast.success("Logged Out Successfully")
     });
     builder.addCase(logout.rejected, (state, action) => {
       state.error = action.payload;
