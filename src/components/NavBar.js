@@ -48,7 +48,7 @@ const NavDiv = styled.div`
   box-shadow: -1px 4px 10px -8px rgba(0, 0, 0, 0.75);
 
   position: fixed;
-  z-index: 999;
+  z-index: 9;
   width: 100%;
   height: 15vh;
   padding: 0.5rem 2rem;

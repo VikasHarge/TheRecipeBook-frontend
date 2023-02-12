@@ -33,7 +33,7 @@ export const StyledOverly = styled.div`
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(2px);
   transition: opacity 500ms;
-  z-index: 999999;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -28,7 +28,6 @@ const RecipeName = () => {
     <>
     {
         loading ? <Loader/> : <>
-        <ToastContainer/>
         <StyledContainer>
             <h1>Recipes</h1>
             <CartContainer>

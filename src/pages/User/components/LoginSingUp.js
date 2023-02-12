@@ -59,16 +59,11 @@ const LoginSingUp = () => {
   const [signupConPassword, setSignupConPassword] = useState("")
 
   useEffect(()=>{
-    if(error){
-      console.log(error);
-      toast.error(error.message)
-      dispatch(clearError())
-    }
     if(isAuthenticated){
       toast.success("Logged in Successfully")
       navigate('/user/details')
     }
-  },[error, isAuthenticated])
+  },[isAuthenticated])
 
   const loginSubmit = (e) => {
     e.preventDefault();
@@ -125,7 +120,9 @@ const LoginSingUp = () => {
 
 
   useEffect(()=>{
-    loginTitle.current.classList.add('tabColor')
+    setTimeout(()=>{
+      loginTitle.current.classList.add('tabColor')
+    },3000)
   },[])
 
   const switchTab = (e, tab) => {
@@ -165,7 +162,6 @@ const LoginSingUp = () => {
         (<Loader/>)
         :
         (<StyledOverly>
-          <ToastContainer/>
       <PopupDiv width="55%" padding="0">
         <StyledLoginSignupContainer
             backgroundImg = {banner}

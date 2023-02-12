@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
     const { loginEmail, loginPassword } = loginDetails;
 
     const res = await axios.post(
-      "https://therecipebookbe.onrender.com/user/login",
+      "http://localhost:4050/user/login",
       { email: loginEmail, password: loginPassword },
       {
         headers: {
@@ -44,7 +44,7 @@ export const registerUser = createAsyncThunk(
     };
 
     const { data } = await axios.post(
-      "https://therecipebookbe.onrender.com/user/register",
+      "http:/localhost:4050/user/register",
       { name, email, password },
       config
     );
@@ -55,7 +55,7 @@ export const registerUser = createAsyncThunk(
 
 //Logout Function
 export const logout = createAsyncThunk("userData/logout", async () => {
-  const { data } = await axios.get("https://therecipebookbe.onrender.com/user/logout", {
+  const { data } = await axios.get("http://localhost:4050/user/logout", {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
@@ -66,7 +66,7 @@ export const logout = createAsyncThunk("userData/logout", async () => {
 
 //loadUser function
 export const loadUser = createAsyncThunk("LOAD_USER", async () => {
-  const { data } = await axios.get("https://therecipebookbe.onrender.com/user/me", {
+  const { data } = await axios.get("http://localhost:4050/user/me", {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export const loadUser = createAsyncThunk("LOAD_USER", async () => {
 export const saveRecipe = createAsyncThunk(
   "SAVE_RECIPE",
   async ({ recipeName, recipeImage, recipeId }) => {
-    const { data } = await axios.post("https://therecipebookbe.onrender.com/user/saveRecipe",
+    const { data } = await axios.post("http://localhost:4050/user/saveRecipe",
       { recipeName, recipeImage, recipeId },
      {
       headers: {

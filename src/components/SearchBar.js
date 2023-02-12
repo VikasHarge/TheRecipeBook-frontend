@@ -44,7 +44,6 @@ const SearchBar = () => {
 
   return (
     <StyledContainer>
-        <ToastContainer/>
         <StyledSeachBoard>
             <SeachBydiv>
                 <StyledInput

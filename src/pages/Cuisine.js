@@ -30,7 +30,6 @@ const Cuisine = () => {
     <>
     {
         loading ? <Loader/> : <>
-        <ToastContainer></ToastContainer>
         <StyledContainer>
             <h1>{cuisineType} Recipes</h1>
             <CartContainer>
